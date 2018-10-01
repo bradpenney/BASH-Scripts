@@ -1,15 +1,18 @@
 #!/bin/bash
 
+# Author: Jason Cannon, Bash Scripting and Shell Programming (Packt)
+# Purpose: Backs up files presented as arguments, gives feedback
+# Arguments: the name of the files you'd like to backup
+# Date: October 1, 2018
+
 #function to backup the file
 function backupFile () {
 	# if file exists
 	if [ -f $1 ]
 	then
-		# assign new name
+		# assign filename + date + PID to variable
 		BACK="/tmp/$(basename ${1}).$(date +%F).$$"
-		# tell user that process in progress
-		# echo "Backing up $1 to ${BACK}"
-		# actually perform the copy
+		# perform the copy
 		cp $1 $BACK
 	else
 		# the file doesn't exist
@@ -37,3 +40,5 @@ done
 
 # close program with space
 echo -e "\n"
+
+exit 0
