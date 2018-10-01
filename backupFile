@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#function to backup the file
+function backupFile () {
+	# if file exists
+	if [ -f $1 ]
+	then
+		# assign new name
+		BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+		# tell user that process in progress
+		# echo "Backing up $1 to ${BACK}"
+		# actually perform the copy
+		cp $1 $BACK
+	else
+		# the file doesn't exist
+		return 1
+	fi
+}
+
+# header for UI
+echo -e "\n##### File Backup Utility #####"
+
+# call the function accepting argument for which file
+for var in "$@"
+do
+	backupFile "$var"
+	# if function exited successfully
+	if [ $? -eq 0 ]
+	then
+		echo -e "Backup of $var succeded."
+	# if function failed
+	else
+		echo -e "$var doesn't exist.  Backup failed."
+		echo -e "Backup failed because file doesn't exist: " $2>> /tmp/failedBackupLog
+	fi
+done
+
+# close program with space
+echo -e "\n"
