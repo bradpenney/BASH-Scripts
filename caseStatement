@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Author: Brad Penney
+# Purpose: Illustrate a sample case statement
+# Date: October 1, 2018
+
+# Evaluates the first argument to grant/deny access
+case "$1" in
+	# check for Brad in any case arrangement
+	[bB][rR][aA][dD])
+		echo "Welcome to your secret lair."
+		;;
+	# check for John, Jim or Fred in any case arrangement
+	[jJ][oO][hH][nN]|[jJ][iI][mM]|[fF][rR][eE][dD])
+		echo "Go away $1, you're no longer authorized"
+		;;
+	# catch-all for anyone else
+	*)
+		echo "Nothing to see here... keep walking."
+		;;
+esac
