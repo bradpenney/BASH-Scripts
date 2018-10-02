@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Purpose: Copy provided filenames to user's home directory.
+# Author: Brad Penney, based on challenge from Sander van Vugt
+# Usage: Navigate to directory from which to copy, use relative path
+# Date: October 2, 2018
+
+# Check to see if arguments were provided
+if [ -z $1 ]
+# If no filename was provided, prompt user for one
+then
+	echo "Please provide filenames!"
+	read FILENAMES
+# If filename was provided
+else
+	FILENAMES=$@
+fi
+
+# Loop over filenames, adding each to specified directory.
+for i in $FILENAMES
+do
+	# relative path is used, but could be absolute path
+	cp $i /sander/$i
+done
+exit 0
+

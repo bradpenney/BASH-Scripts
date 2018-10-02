@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Purpose: Ensure that the right number of arguments were supplied.
+# Author: Brad Penney, based on script by Sander van Vugt
+
+if [ $# -eq 3 ]
+then
+	echo "Thank you for supplying 3 arguments."
+	echo "The script can run correctly now."
+else
+	echo "This script requires three arguments to run correctly."
+	echo "Please try again."
+fi
+
+exit 0

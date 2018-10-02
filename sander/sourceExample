@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Purpose: Example script to show houw sourcing works
+# Author: Sander van Vugt
+
+source sourceMe # note: relative path
+# . sourceMe # note: relative path
+
+echo My favourite color is $COLOR
+
+exit 0

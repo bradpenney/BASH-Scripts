@@ -1,0 +1,46 @@
+#!/bin/bash 
+
+# -ex Add these flags to the shebang line to turn on debugging options
+
+# Author: Jason Cannon, Bash Scripting and Shell Programming (Packt)
+# Purpose: Backs up files presented as arguments, gives feedback
+# Arguments: the name of the files you'd like to backup
+# Date: October 1, 2018
+
+#function to backup the file
+function backupFile () {
+	# if file exists
+	if [ -f $1 ]
+	then
+		# assign filename + date + PID to variable
+		BACK="/tmp/$(basename ${1}).$(date +%F).$$"
+		# perform the copy
+		cp $1 $BACK
+	else
+		# the file doesn't exist
+		return 1
+	fi
+}
+
+# header for UI
+echo -e "\n##### File Backup Utility #####"
+
+# call the function accepting argument for which file
+for var in "$@"
+do
+	backupFile "$var"
+	# if function exited successfully
+	if [ $? -eq 0 ]
+	then
+		echo -e "Backup of $var succeded."
+	# if function failed
+	else
+		echo -e "$var doesn't exist.  Backup failed."
+		echo -e "Backup failed because file doesn't exist: " $2>> /tmp/failedBackupLog
+	fi
+done
+
+# close program with space
+echo -e "\n"
+
+exit 0

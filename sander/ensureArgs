@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Purpose: Technique to make sure that user input is provided
+# Author: Sander van Vugt
+
+if [ -z $1 ]
+then
+	echo Please provide filenames!
+	read FILENAMES
+else
+	FILENAMES="$@"
+fi
+
+echo "The following filenames were provided: $FILENAMES"

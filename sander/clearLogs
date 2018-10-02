@@ -1,0 +1,14 @@
+#!/bin/bash
+# Purpose: copies /var/log/syslog to /var/log/syslog.old & clears current
+# Author: Sander van Vugt
+# Course: Bash Scripting
+# Usage: ./clearLogs
+# Requires SUDO privileges
+
+LOGFILE=/var/log/syslog #may be in /var/log/messages in CentOS
+
+cp $LOGFILE $LOGFILE.old
+cat /dev/null > $LOGFILE
+echo "Log file copied and cleaned up"
+
+exit 0
