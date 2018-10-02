@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# -ex Add these flags to the shebang line to turn on debugging options
+
 # Author: Brad Penney
 # Purpose: Show some simple BASH functionality
 # Arguments: Takes age of user

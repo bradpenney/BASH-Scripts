@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# -ex Add these flags to the shebang line to turn on debugging options
+
 # Author: Brad Penney
 # Purpose: Illustrate a sample case statement
 # Date: October 1, 2018

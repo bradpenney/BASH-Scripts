@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash 
+
+# -ex Add these flags to the shebang line to turn on debugging options
 
 # Author: Jason Cannon, Bash Scripting and Shell Programming (Packt)
 # Purpose: Backs up files presented as arguments, gives feedback
