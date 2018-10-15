@@ -14,6 +14,11 @@ echo -e '\nThe variable ALPHA has been set to' $ALPHA
 echo -e '\nIf you check to see if ALPHA starts with an "a" using "[ $ALPHA = a* ] && echo String starts with a || echo String does not start with an a", you get:'
 [ $ALPHA = a* ] && echo String starts with a || echo String does not start with an a
 
+
+echo -e '\n## NOTE HOW SYNTAX CHANGED THE RESULT, WITHOUT CHANGING THE CONTENT##'
+echo 'If you check to see if ALPHA starts with an "a" using "[ $ALPHA=a* ] && echo String starts with a || echo String does not start with an a", you get:'
+[ $ALPHA=a* ] && echo String starts with a || echo String does not start with an a
+
 echo -e '\nIf you check to see if ALPHA starts with an "a" using "[[ $ALPHA = a* ]] && echo String starts with a || echo String does not start with an a", you get:'
 [[ $ALPHA = a* ]] && echo String starts with a || echo String does not start with a
 
