@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Purpose: Illustrate substitution operators
+# Author: Brad Penney, based on lecture by Sander van Vugt
+# Date: October 3rd, 2018
+
+VAR3='Hello'
+
+# if variable doesn't exist, return what is after hyphen
+echo ${VAR1:-Error} ' - $VAR1 is not set, it is just a substitution operator'
+
+# if variable doesn't exist, set default variable after equals
+echo ${VAR2:=myVariable}
+echo '$VAR2 is now set to' $VAR2
+
+# if variable is set, will return string starting at first position, and will go however many positions are specified 
+echo ${VAR3:0:2}
+
+# if variable doesn't exist show value after ?, null if no message, exits program
+echo ${VAR4:?Error - this variable is not yet set}
+echo 'This message will only display if VAR4 was previously set'
+
+exit 0;

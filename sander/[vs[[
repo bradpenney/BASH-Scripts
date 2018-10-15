@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Purpose: to explore the [ ] operators vs the [[ ]] operators
+# Author: Brad Penney
+
+echo -e '\n### The Difference between [ ] and [[ ]] in BASH'
+
+echo -e "\nCheckout https://stackoverflow.com/questions/3427872/whats-the-difference-between-and-in-bash for a good explanation"
+
+ALPHA=abcdef
+
+echo -e '\nThe variable ALPHA has been set to' $ALPHA
+
+echo -e '\nIf you check to see if ALPHA starts with an "a" using "[ $ALPHA = a* ] && echo String starts with a || echo String does not start with an a", you get:'
+[ $ALPHA = a* ] && echo String starts with a || echo String does not start with an a
+
+echo -e '\nIf you check to see if ALPHA starts with an "a" using "[[ $ALPHA = a* ]] && echo String starts with a || echo String does not start with an a", you get:'
+[[ $ALPHA = a* ]] && echo String starts with a || echo String does not start with a
+
+echo -e '\n'
+
+exit 0
+
+

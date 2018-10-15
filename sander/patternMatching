@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Purpose: To demonstrate pattern matching deletions
+# Author: Sander van Vugt wtih minor modifications by Brad Penney
+
+# Set a sample variable
+SAMPLE=rababarabarabarara
+
+# Show the entire variable
+echo -e '\nSAMPLE is' ${SAMPLE}
+
+# Use ## to search from beginning, delete the longest part that matches
+echo -e '\n##, search from beginning, delete longest part that matches'
+echo 'The result of ##*ba is' ${SAMPLE##*ba}
+
+# Use # to search from beginning, delete the shortest part that matches
+echo -e '\n#, search from beginning, delete shortest part that matches'
+echo 'The result of #*ba is' ${SAMPLE#*ba}
+
+# Use %% to search from end, delete the longest part that matches
+echo -e '\n%%, search from end, delete longest part that matches'
+echo 'The result of %%ba* is' ${SAMPLE%%ba*}
+
+# Use % to search from end, delete the shortest part that matches
+echo -e '\n%, search from end, delete shortest part that matches'
+echo 'The result of %ba* is' ${SAMPLE%ba*} 
+
+exit 0
+

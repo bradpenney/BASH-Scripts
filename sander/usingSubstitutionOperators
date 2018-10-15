@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Purpose: Practical use of variable substitution
+# Author: Brad Penney, in repsonse to exercise by Sander van Vugt
+
+DATE=$(date +%d-%m-%y)
+echo 'The original DATE variable is' $DATE
+
+echo 'Substituion operator syntax: <variableName>:<PositionToStart>:<HowManyPositions>'
+
+# Show the day
+echo 'The day is' ${DATE:0:2}
+
+# Show the month
+echo 'The month is' ${DATE:3:2}
+
+# Show the year
+echo 'The month is' ${DATE:6:2}

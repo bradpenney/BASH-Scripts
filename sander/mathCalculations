@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Purpose: Demonstrate using some of BASH's calculating operations
+# Author: Brad Penney, based on lecture from Sander van Vugt
+
+# BASH has a simple built-in calculator
+echo -e '\nBASH has a simple calculator'
+echo 'echo $((10 * 3)) results in' $((10*3))
+
+# However, it doesn't do decimals
+echo -e '\nHowever, it does not have decimal capabilities:'
+echo 'echo $((10/3)) results in' $((10/3))
+
+# BC is a BASH stand-alone BASH calculator
+echo -e '\nPiping through bc allows the use of decmials.'
+echo -e 'echo "scale=9; 10/3"|bc) results in' $(echo "scale=9; 10/3" | bc) '\n'
+

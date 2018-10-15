@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Purpose: outline some of the basics of grep
+# Author: Brad Penney, following lecture by Sander van Vugt
+
+
+echo -e '\n#Some Basic Grep Flags#'
+echo 'grep -i - makes grep case insensitive'
+echo 'grep -v - exclude lines that match the pattern'
+echo 'grep -r - search recursively'
+echo 'grep -e - match more than one regular expression'
+echo 'grep -A5 - show five lines after the matching expression'
+echo -e 'grep -B5 - show five lines before the matching expression\n'
+
+exit 0

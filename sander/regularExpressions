@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Purpose: to introduce Regular Expressions
+# Author: Brad Penney, based on lecture by Sander van Vugt
+
+# Regular Expressions work with commands such as grep, sed, awk
+
+echo 'Regular Expressions are a very large & complicated subject.'
+echo 'Some basic examples include:'
+
+# ^text searches for a line that begins with a specific pattern
+echo -e '\n#Search for a process that starts with systemd+#'
+echo -e 'echo $(ps aux | grep ^systemd+) results in:\n' $(ps aux | grep ^systemd+)
+
+# text$ searches for a line that ends with a specific pattern
+echo -e '\n#Search for a process that ends with sh#'
+echo -e 'echo $(ps aux | grep sh$) results in:\n' $(ps aux | grep sh$)
+
+# match letters between a & f
+echo -e '\n#Search for a process that matches the letters au[u,v,w,x,y,z]#'
+echo -e 'echo $(ps aux | grep au[u-z]) results in:\n' $(ps aux | grep au[u-z])
+
+exit 0
