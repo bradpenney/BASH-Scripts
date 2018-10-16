@@ -1,0 +1,52 @@
+##### Regular Expressions Metacharacters #####
+
+.	Match any single chracter except newline.
+*	Match any number of single character that preceeds it
+[...]	Match any one of the characters enclosed
+^	First character of a regex, matches beginning of line (or string in awk)
+$	Last character of a regex, matches the end of the line (or string in awk)
+\	Escape the special character that follows
+
+
+##### egrep and awk Extended Metacharacters #####
+
++	Matches one or more occurrences of the preceeding regex
+?	Matches zero or one occurrences of the preceeding regex
+|	Specifies that either the preceeding or following regex can be matched
+()	Groups regexs
+
+
+##### Character Classes Special Characters [] #####
+
+\	Escapes any special character (awk only)
+-	Indicates a range when not in the first or last position
+^ 	Indicates a reverse match only when in first position
+
+
+##### POSIX Bracket Classes Special Characters [] #####
+
+[:alnum:]	Printable characters (including whitespace)
+[:alpha:]	Alphabetic characters
+[:blank:]	Space and tab characters
+[:cntrl:]	Control characters
+[:digit:]	Numeric characters
+[:graph:]	Printable and visible (non-space) characters
+[:lower:]	Lowercase characters
+[:print:]	Printable characters (includes whitespace)
+[:punct:]	Punctuation characters
+[:space:]	Whitespace characters
+[:upper:]	Uppercase characters
+[:xdigit:]	Hexadecimal digits
+
+
+#####  Useful Regular Expressions #####
+
+Postal Abbreviation for Province	 [A-Z][A-Z] 
+Month, Day, Year			[A-Z][a-z]\{3,9\} {1,2\}, [0-9]\{4\}
+North American Local Telephone		[0-9]\{3\}-[0-9]\{4\}
+Formatted Dollar Amounts		\$[ 0-9]*\.[0-9][0-9]
+Match blank lines			^$
+Match entire line			^.*$
+Match one or more spaces		  *
+
+

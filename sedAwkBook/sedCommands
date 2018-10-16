@@ -1,0 +1,7 @@
+##### Command Line Options for SED #####
+
+sed -e	Editing instruction follows
+sed -f	Filename or script follows
+sed -n 	Supress automatic output of input lines
+
+

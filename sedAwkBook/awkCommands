@@ -1,0 +1,7 @@
+##### AWK Command Line Options #####
+
+awk -f	filename of script follows
+awk -F 	change field separator
+awk -v	var=value follows
+
+

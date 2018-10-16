@@ -1,0 +1,32 @@
+##### Ed Line Editor Commands #####
+
+Additional Source: https://www.howtoforge.com/linux-ed-command
+
+ed		starts ed
+a		enter a line after the current line (start file)
+.		finished editing a line
+w		write the changes to the line
+q 		quit ed
+p		gives you current line
+n		gives you current line and line number
+<#>		move to specific line number
+<+/-#>		move up or down a specific number of lines
+d		delete current line
+<#>d		delete specified line number
+c		change current line (retype entire line)
+i		insert line before current line
+h		verbose error
+H		always verbose error
+P		change prompt to *
+ed -p<symbol>	custom prompt
+<#>t<#>		copy first line to second line position
+<#>m<#>		move first line to second line position
+/<text>		search text for <text>, repeat for next instance
+
+##### Pattern Matching #####
+s/<pattern>/<replacement>/		on current line, find pattern and replace it
+<#line>/s/<pattern>/replacement/	on specified line, find the pattern and replace first instance
+<address>/s/<pattern>/<replacement>/	on next occurrence of pattern, find pattern and replace first intance
+<address>/s/<pattern>/<repleacement>/g	on next occurrence of pattern, find pattern and replace all instances on that line
+g/<address>/s/<pattern>/<replacement>/g	replace all occurrences of pattern in entire document
+
