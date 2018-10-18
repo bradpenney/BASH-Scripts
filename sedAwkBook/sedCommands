@@ -4,4 +4,22 @@ sed -e	Editing instruction follows
 sed -f	Filename or script follows
 sed -n 	Supress automatic output of input lines
 
+##### Substitution Flags #####
 
+sed 's/<pattern>/<replacement>/<flag>'
+
+n		Replacement should be made only on the nth occurence of the pattern
+g		Make changes globally (default is only first instance)
+p		Print the contents of the pattern space
+w <file>	Write the contents of the pattern space to a file
+
+
+
+
+##### Common sed Commands #####
+#
+Print only records with matching pattern:
+	sed -nr '/<regex>/p' 
+
+Print records with one of these matching patterns:
+	sed -nr '/<regex1>|<regex2>/p' 

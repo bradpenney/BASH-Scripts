@@ -1,7 +1,50 @@
 ##### AWK Command Line Options #####
 
-awk -f	filename of script follows
-awk -F 	change field separator
-awk -v	var=value follows
+awk -f		filename of script follows
+awk -F 		change field separator
+awk -v		var=value follows
 
+##### AWK Variables #####
+
+awk '{print FS}'	input field separator value
+awk '{print OFS}'	output field separator value
+awk '{print NF}'	number of fields in current line
+awk '{print NR}'	number of records in the current file
+awk '{print RS}'	record separator value
+awk '{print ORS}'	output record separator
+awk '{print FILENAME}'	current filename being processed
+
+##### Common AWK Tasks #####
+
+Print only records with matching pattern:
+	awk '/<regex>/ { print }'
+
+Print records with one of these matching patterns:
+	awk '/<regex1>/ || </<regex2>/ { print }'
+
+Print records matching both of these patterns:
+	awk '/<regex1>/ && </regex2>/ { print }'
+
+Search for files of a particular file extension (upper or lower case):
+	 ls -l | awk '/[.][Pp][Yy]/'
+
+Mask a Column in a CSV:
+	awk -F, '{ $2="0000," ; print ; }' <inputFile> > <outputFile>
+
+Mask first two columns of a CSV file, output only first few lines: 
+	cat <inputFile> | head -31 | awk -F, '{ $1="XXXXX, XXXXXX," ; $2="0000," ; print ; }'
+
+Count how many records are in a file:
+	awk 'END{print NR}' <inputFile>
+
+Print a specific line in a file:
+	awk '{if(NR~/^2$/)print}'
+
+Print the current IP address (requires correct interface name):
+	ifconfig enp0s3 | awk '{if(NR==2)print $2}'
+
+##### Sources #####
+
+YouTube - Hakology - awk Basics Part 1
+sed & awk, 2nd ed, Dale Dougherty & Arnold Robbins
 

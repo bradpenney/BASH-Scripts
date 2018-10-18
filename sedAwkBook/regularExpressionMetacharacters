@@ -15,7 +15,6 @@ $	Last character of a regex, matches the end of the line (or string in awk)
 |	Specifies that either the preceeding or following regex can be matched
 ()	Groups regexs
 
-
 ##### Character Classes Special Characters [] #####
 
 \	Escapes any special character (awk only)
@@ -25,18 +24,18 @@ $	Last character of a regex, matches the end of the line (or string in awk)
 
 ##### POSIX Bracket Classes Special Characters [] #####
 
-[:alnum:]	Printable characters (including whitespace)
-[:alpha:]	Alphabetic characters
-[:blank:]	Space and tab characters
-[:cntrl:]	Control characters
-[:digit:]	Numeric characters
-[:graph:]	Printable and visible (non-space) characters
-[:lower:]	Lowercase characters
-[:print:]	Printable characters (includes whitespace)
-[:punct:]	Punctuation characters
-[:space:]	Whitespace characters
-[:upper:]	Uppercase characters
-[:xdigit:]	Hexadecimal digits
+[[:alnum:]]	Printable characters (including whitespace)
+[[:alpha:]]	Alphabetic characters
+[[:blank:]]	Space and tab characters
+[[:cntrl:]]	Control characters
+[[:digit:]]	Numeric characters
+[[:graph:]]	Printable and visible (non-space) characters
+[[:lower:]]	Lowercase characters
+[[:print:]]	Printable characters (includes whitespace)
+[[:punct:]]	Punctuation characters
+[[:space:]]	Whitespace characters
+[[:upper:]]	Uppercase characters
+[[:xdigit:]]	Hexadecimal digits
 
 
 #####  Useful Regular Expressions #####
